@@ -2,7 +2,7 @@ package com.dsaarena;
 
 public class Match{
     private long matchId;
-    private static long nextMatchId = 100000;
+    private static long nextMatchId = 50000;
     private long player1Id;
     private long player2Id;
     private long questionId;
@@ -33,5 +33,36 @@ public class Match{
         this.winnerId = -1;
         this.player1WrongSubmissions = 0;
         this.player2WrongSubmissions = 0;
+    }
+    public long getMatchId(){
+        return matchId;
+    }
+    public long getPlayer1Id(){
+        return player1Id;
+    }
+    public long getPlayer2Id(){
+        return player2Id;
+    }
+    public long getQuestionId(){
+        return questionId;
+    }
+    public long getArenaId(){
+        return arenaId;
+    }
+    public String getMatchStatus(){
+        return matchStatus;
+    }
+    public int getPlayer1WrongSubmissions(){
+        return player1WrongSubmissions;
+    }
+    public int getPlayer2WrongSubmissions(){
+        return player2WrongSubmissions;
+    }
+    public void incrementWrongSubmissionCount(long playerId){
+        if(playerId == player1Id){
+            player1WrongSubmissions++;
+        }else if(playerId == player2Id){
+            player2WrongSubmissions++;
+        }
     }
 }

@@ -34,4 +34,48 @@ public class Submission {
         this.totalTestCases = totalTestCases;
         this.submissionTime = submissionTime;
     }
+
+    public long getQuestionId() {
+        return questionId;
+    }
+
+    public long getSubmissionId() {
+        return submissionId;
+    }
+
+    public long getMatchId() {
+        return matchId;
+    }
+
+    public long getPlayerId() {
+        return playerId;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public int getPassedTestCases() {
+        return passedTestCases;
+    }
+
+    public int getTotalTestCases() {
+        return totalTestCases;
+    }
+
+    public String getVerdict() {
+        return verdict;
+    }
+
+    public long getSubmissionTime() {
+        return submissionTime;
+    }
+
+    public boolean isAccepted(){
+        return passedTestCases == totalTestCases;
+    }
 }
