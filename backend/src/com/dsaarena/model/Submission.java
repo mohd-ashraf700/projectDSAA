@@ -1,4 +1,4 @@
-package com.dsaarena;
+package com.dsaarena.model;
 
 public class Submission {
     private long submissionId;

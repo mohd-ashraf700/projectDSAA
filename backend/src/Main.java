@@ -1,5 +1,5 @@
-//import com.dsaarena.Match;
-//import com.dsaarena.User;
+//import com.dsaarena.model.Arena.Match;
+//import com.dsaarena.model.Arena.User;
 //
 //public class Main {
 //    public static void main(String[] args) {
