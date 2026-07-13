@@ -1,7 +1,7 @@
 package com.dsaarena.model;
 
 public class Arena{
-    private long arenaId;
+    private int arenaId;
     private String arenaName;
     private String difficulty;
     private int entryFee;
@@ -9,7 +9,7 @@ public class Arena{
     private int minRating;
     private int readingTime;
     private int codingTime;
-    public Arena(long arenaId , String arenaName , String difficulty,int entryFee, int rewardCoins, int minRating, int readingTime, int codingTime)
+    public Arena(int arenaId , String arenaName , String difficulty,int entryFee, int rewardCoins, int minRating, int readingTime, int codingTime)
     {
         this.arenaId = arenaId;
         this.arenaName = arenaName;
@@ -20,7 +20,7 @@ public class Arena{
         this.readingTime = readingTime;
         this.codingTime = codingTime;
     }
-    public long getArenaId(){
+    public int getArenaId(){
         return arenaId;
     }
     public String getArenaName(){
