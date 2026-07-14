@@ -62,4 +62,26 @@ public class MatchmakingService {
         }
         QueueEntry entry = new QueueEntry(user , LocalDateTime.now());
     }
+
+    // find best opponent
+    private QueueEntry findBestOpponent(User user , Arena arena){
+        List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
+        int minDifference = Integer.MAX_VALUE;
+        QueueEntry bestOpponent = null;
+
+        for(QueueEntry entry : queue){
+            if(entry.getUser().getId() == user.getId()){
+                continue;
+            }
+            int ratingDifference = Math.abs(user.getRating() - entry.getUser().getRating());
+            if(ratingDifference == 0){
+                return entry;
+            }
+            if(ratingDifference < minDifference){
+                minDifference = ratingDifference;
+                bestOpponent = entry;
+            }
+        }
+        return bestOpponent;
+    }
 }
