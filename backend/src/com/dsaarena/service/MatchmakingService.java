@@ -61,8 +61,24 @@ public class MatchmakingService {
             return;
         }
         QueueEntry entry = new QueueEntry(user , LocalDateTime.now());
+        List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
+        queue.add(entry);
+
     }
 
+    //immediate matchMatch
+    private QueueEntry tryImmediateMatch(User user , Arena arena){
+        List <QueueEntry> queue = arenaQueues.get(arena.getArenaId());
+        for(QueueEntry entry : queue){
+            if(entry.getUser().getId() == user.getId()){
+                continue;
+            }
+            if(Math.abs(entry.getUser().getRating() - user.getRating()) == 0){
+                return entry;
+            }
+        }
+        return null;
+    }
     // find best opponent
     private QueueEntry findBestOpponent(User user , Arena arena){
         List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
