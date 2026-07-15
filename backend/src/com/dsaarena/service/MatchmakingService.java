@@ -1,6 +1,7 @@
 package com.dsaarena.service;
 
 import com.dsaarena.model.Arena;
+import com.dsaarena.model.Match;
 import com.dsaarena.model.QueueEntry;
 import com.dsaarena.model.User;
 
@@ -63,10 +64,20 @@ public class MatchmakingService {
         QueueEntry entry = new QueueEntry(user , LocalDateTime.now());
         List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
         queue.add(entry);
+        QueueEntry opponent = tryImmediateMatch(user , arena);
 
+        if(opponent != null){
+            if (!reValidationBeforeMatch(user, opponent.getUser(), arena)) {
+                return;
+            }
+            removeUsersFromQueue(user , opponent.getUser(), arena);
+            deductEntryFee(user , opponent.getUser(), arena);
+            Match match = createMatch(user , opponent.getUser() , arena);
+            //start game
+        }
     }
 
-    //immediate matchMatch
+    //immediate Match
     private QueueEntry tryImmediateMatch(User user , Arena arena){
         List <QueueEntry> queue = arenaQueues.get(arena.getArenaId());
         for(QueueEntry entry : queue){
@@ -99,5 +110,53 @@ public class MatchmakingService {
             }
         }
         return bestOpponent;
+    }
+
+    //reValidation
+    private boolean reValidationBeforeMatch(User user , User opponent , Arena arena){
+        if(user == null || opponent == null || arena == null){
+            return false;
+        }
+        if(user.getCoin() < arena.getEntryFee() || opponent.getCoin() < arena.getEntryFee()){
+            return false;
+        }
+        if(!isAlreadyInQueue(user , arena) || !isAlreadyInQueue(opponent , arena)){
+            return false;
+        }
+        //isAlreadyInMatch check after matchmaking repository
+        return true;
+    }
+
+    //userRemoveFromQueue
+    private void removeUsersFromQueue(User user, User opponent, Arena arena){
+        List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
+        QueueEntry userEntry = null;
+        QueueEntry opponentEntry = null;
+        for(QueueEntry entry : queue){
+            if(entry.getUser().getId() == user.getId()){
+                userEntry = entry;
+            }
+            if(entry.getUser().getId() == opponent.getId()){
+                opponentEntry = entry;
+            }
+        }
+        if(userEntry != null){
+            queue.remove(userEntry);
+        }
+        if(opponentEntry != null){
+            queue.remove(opponentEntry);
+        }
+    }
+
+    // coin deduction
+    private void deductEntryFee(User user , User opponent , Arena arena){
+        user.deductCoins(arena.getEntryFee());
+        opponent.deductCoins(arena.getEntryFee());
+    }
+
+    //createMatch
+    private Match createMatch(User user , User opponent , Arena arena){
+        Match match = new Match(user.getId(), opponent.getId(), arena.getArenaId() , arena.getEntryFee(), user.getRating(), opponent.getRating());
+        return match;
     }
 }

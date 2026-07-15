@@ -17,10 +17,9 @@ public class Match{
     private int player1WrongSubmissions;
     private int player2WrongSubmissions;
 
-    public Match(long player1Id , long player2Id , long questionId , long arenaId , int entryFee , int player1RatingAtStart , int player2RatingAtStart){
+    public Match(long player1Id , long player2Id , long arenaId , int entryFee , int player1RatingAtStart , int player2RatingAtStart){
         this.player1Id = player1Id;
         this.player2Id = player2Id;
-        this.questionId = questionId;
         this.arenaId = arenaId;
         this.entryFee = entryFee;
         this.player1RatingAtStart = player1RatingAtStart;
@@ -28,6 +27,7 @@ public class Match{
         this.matchId = nextMatchId;
         nextMatchId++;
         this.matchStatus = "CREATED";
+        this.questionId = -1;
         this.startTime = 0;
         this.endTime = 0;
         this.winnerId = -1;
