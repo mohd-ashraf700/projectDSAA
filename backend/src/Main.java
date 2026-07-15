@@ -1,17 +1,10 @@
-//import com.dsaarena.model.Arena.Match;
-//import com.dsaarena.model.Arena.User;
-//
-//public class Main {
-//    public static void main(String[] args) {
-//        User u1 = new User("mohdAshraf" , "10045ashraf@gmail.com" , "ashraf@123");
-//        System.out.println(u1.toString());
-//        User u2 = new User("Ashrafkhan" , "10045ashraf@gmail.com" , "ashraf@123");
-//        u2.addCoins(500);
-//        u2.deductCoins(700);
-//        u2.increaseRating(600);
-//        u2.setUsername("       ");
-//        System.out.println(u2.toString());
-//        Match m;
-//
-//    }
-//}
+import com.dsaarena.model.Arena;
+import com.dsaarena.repository.ArenaRepository;
+
+public class Main {
+    public static void main(String[] args) {
+        ArenaRepository repo = new ArenaRepository();
+        Arena arena = repo.getArenaById(101);
+        System.out.println(arena.getArenaName());
+    }
+}
