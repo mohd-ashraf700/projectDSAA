@@ -78,19 +78,19 @@ public class User {
         return "User{Id = " + id +" , username = " + username + " , rating = " + rating + " , rank = " + rank + " , coin = " + coin +'}';
     }
     private void updateRank(){
-        if(this.rating < 500){
+        if(this.rating < 200){
             this.rank = "Bronze";
         }
-        else if(this.rating >= 500 && this.rating< 1000){
+        else if(this.rating >= 200 && this.rating< 500){
             this.rank = "Silver";
         }
-        else if(this.rating >= 1000 && this.rating < 1500){
+        else if(this.rating >= 500 && this.rating < 1000){
             this.rank = "Gold";
         }
-        else if(this.rating >= 1500 &&  this.rating < 2000){
+        else if(this.rating >= 1000 &&  this.rating < 1800){
             this.rank = "Platinum";
         }
-        else if(this.rating >= 2000 && this.rating < 2500){
+        else if(this.rating >= 1800 && this.rating < 2800){
             this.rank = "Diamond";
         }
         else {
