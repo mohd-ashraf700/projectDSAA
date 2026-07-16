@@ -4,6 +4,7 @@ import com.dsaarena.model.Arena;
 import com.dsaarena.model.Match;
 import com.dsaarena.model.QueueEntry;
 import com.dsaarena.model.User;
+import com.dsaarena.repository.ArenaRepository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,15 +14,14 @@ import java.util.Map;
 
 public class MatchmakingService {
     private Map<Integer , List<QueueEntry>> arenaQueues;
+    private ArenaRepository arenaRepository;
 
     public MatchmakingService(){
         arenaQueues = new HashMap<>();
-        arenaQueues.put(1 , new ArrayList<>());
-        arenaQueues.put(2 , new ArrayList<>());
-        arenaQueues.put(3 , new ArrayList<>());
-        arenaQueues.put(4 , new ArrayList<>());
-        arenaQueues.put(5 , new ArrayList<>());
-        arenaQueues.put(6 , new ArrayList<>());
+        arenaRepository = new ArenaRepository();
+        for(Arena arena : arenaRepository.getAllArenas()){
+            arenaQueues.put(arena.getArenaId() , new ArrayList<>());
+        }
     }
 
     // Eligibility validation
