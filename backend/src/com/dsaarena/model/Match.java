@@ -1,5 +1,7 @@
 package com.dsaarena.model;
 
+import com.dsaarena.enums.MatchStatus;
+
 public class Match{
     private long matchId;
     private static long nextMatchId = 50000;
@@ -11,7 +13,7 @@ public class Match{
     private int entryFee;
     private int player1RatingAtStart;
     private int player2RatingAtStart;
-    private String matchStatus;
+    private MatchStatus matchStatus;
     private long startTime;
     private long endTime;
     private int player1WrongSubmissions;
@@ -26,7 +28,7 @@ public class Match{
         this.player2RatingAtStart = player2RatingAtStart;
         this.matchId = nextMatchId;
         nextMatchId++;
-        this.matchStatus = "CREATED";
+        this.matchStatus = MatchStatus.Waiting;
         this.questionId = -1;
         this.startTime = 0;
         this.endTime = 0;
@@ -49,7 +51,7 @@ public class Match{
     public long getArenaId(){
         return arenaId;
     }
-    public String getMatchStatus(){
+    public MatchStatus getMatchStatus(){
         return matchStatus;
     }
     public int getPlayer1WrongSubmissions(){
