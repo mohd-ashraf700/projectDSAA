@@ -1,5 +1,6 @@
 package com.dsaarena.repository;
 
+import com.dsaarena.enums.Difficulty;
 import com.dsaarena.model.Arena;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ArenaRepository {
     private void initializeArenas(){
         Arena bronzeArena = new Arena(101,
                 "Bronze Arena",
-                "Easy",
+                Difficulty.EASY,
                 200,
                 400,
                 0,
@@ -29,7 +30,7 @@ public class ArenaRepository {
 
         Arena silverArena = new Arena(102,
                 "Silver Arena",
-                "Easy - Medium",
+                Difficulty.EASY_MEDIUM,
                 550,
                 1000,
                 200,
@@ -41,7 +42,7 @@ public class ArenaRepository {
 
         Arena goldArena = new Arena(103,
                 "Gold Arena",
-                "Medium",
+                Difficulty.MEDIUM,
                 1100,
                 2000,
                 500,
@@ -53,7 +54,7 @@ public class ArenaRepository {
 
         Arena platinumArena = new Arena(104,
                 "Platinum Arena",
-                "Medium - Hard",
+                Difficulty.MEDIUM_HARD,
                 2600,
                 5000,
                 1000,
@@ -65,7 +66,7 @@ public class ArenaRepository {
 
         Arena diamondArena = new Arena(105,
                 "Diamond Arena",
-                "Hard",
+                Difficulty.HARD,
                 11000,
                 20000,
                 1800,
@@ -77,7 +78,7 @@ public class ArenaRepository {
 
         Arena masterArena = new Arena(106,
                 "Master Arena",
-                "Advanced",
+                Difficulty.ADVANCED,
                 26000,
                 50000,
                 2800,

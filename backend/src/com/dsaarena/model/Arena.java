@@ -1,9 +1,11 @@
 package com.dsaarena.model;
 
+import com.dsaarena.enums.Difficulty;
+
 public class Arena{
     private int arenaId;
     private String arenaName;
-    private String difficulty;
+    private Difficulty difficulty;
     private int entryFee;
     private int rewardCoins;
     private int minRating;
@@ -12,7 +14,7 @@ public class Arena{
     private int winRating;
     private int lossRating;
 
-    public Arena(int arenaId , String arenaName , String difficulty,int entryFee, int rewardCoins, int minRating, int readingTime, int codingTime , int winRating , int lossRating)
+    public Arena(int arenaId , String arenaName , Difficulty difficulty,int entryFee, int rewardCoins, int minRating, int readingTime, int codingTime , int winRating , int lossRating)
     {
         this.arenaId = arenaId;
         this.arenaName = arenaName;
@@ -31,7 +33,7 @@ public class Arena{
     public String getArenaName(){
         return arenaName;
     }
-    public String getDifficulty(){
+    public Difficulty getDifficulty(){
         return difficulty;
     }
     public int getEntryFee(){

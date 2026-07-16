@@ -1,11 +1,13 @@
 package com.dsaarena.model;
 
+import com.dsaarena.enums.Difficulty;
+
 public class Question {
     private long questionId;
     private String title;
     private String problemStatement;
     private String constraints;
-    private String difficulty;
+    private Difficulty difficulty;
     private String topic;
     private int timeLimit;
     private int memoryLimit;
@@ -18,7 +20,7 @@ public class Question {
                     String title,
                     String problemStatement,
                     String constraints,
-                    String difficulty,
+                    Difficulty difficulty,
                     String topic,
                     int timeLimit,
                     int memoryLimit,
@@ -58,7 +60,7 @@ public class Question {
         return constraints;
     }
 
-    public String getDifficulty() {
+    public Difficulty getDifficulty() {
         return difficulty;
     }
 
