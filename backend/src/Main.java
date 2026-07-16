@@ -6,5 +6,8 @@ public class Main {
         ArenaRepository repo = new ArenaRepository();
         Arena arena = repo.getArenaById(101);
         System.out.println(arena.getArenaName());
+        for(Arena a : repo.getAllArenas()){
+            System.out.println(a.getArenaName());
+        }
     }
 }
