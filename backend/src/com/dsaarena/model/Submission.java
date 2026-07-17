@@ -2,6 +2,8 @@ package com.dsaarena.model;
 
 import com.dsaarena.enums.Verdict;
 
+import java.time.LocalDateTime;
+
 public class Submission {
     private long submissionId;
     private long questionId;
@@ -13,7 +15,7 @@ public class Submission {
     private Verdict verdict;
     private int passedTestCases;
     private int totalTestCases;
-    private long submissionTime;
+    private LocalDateTime submissionTime;
     public Submission(long matchId,
                       long questionId,
                       long playerId,
@@ -22,7 +24,7 @@ public class Submission {
                       Verdict verdict,
                       int passedTestCases,
                       int totalTestCases,
-                      long submissionTime
+                      LocalDateTime submissionTime
                       ){
         this.submissionId = nextSubmissionId;
         nextSubmissionId++;
@@ -73,7 +75,7 @@ public class Submission {
         return verdict;
     }
 
-    public long getSubmissionTime() {
+    public LocalDateTime getSubmissionTime() {
         return submissionTime;
     }
 
