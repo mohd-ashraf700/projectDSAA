@@ -159,4 +159,27 @@ public class MatchmakingService {
         Match match = new Match(user.getId(), opponent.getId(), arena.getArenaId() , arena.getEntryFee(), user.getRating(), opponent.getRating());
         return match;
     }
+
+    //cancel Matchmaking
+    public boolean cancelMatchmaking(User user , Arena arena){
+        if(user == null || arena == null){
+            return false;
+        }
+        if(!isAlreadyInQueue(user , arena)){
+            return false;
+        }
+        QueueEntry removeEntry = null;
+        List<QueueEntry> queue = arenaQueues.get(arena.getArenaId());
+        for(QueueEntry entry : queue){
+            if(entry.getUser().getId() == user.getId()){
+                removeEntry = entry;
+                break;
+            }
+        }
+        if(removeEntry != null){
+            queue.remove(removeEntry);
+            return true;
+        }
+        return false;
+    }
 }
