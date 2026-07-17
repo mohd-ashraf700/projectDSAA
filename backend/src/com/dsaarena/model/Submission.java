@@ -1,5 +1,7 @@
 package com.dsaarena.model;
 
+import com.dsaarena.enums.Verdict;
+
 public class Submission {
     private long submissionId;
     private long questionId;
@@ -8,7 +10,7 @@ public class Submission {
     private long playerId;
     private String language;
     private String code;
-    private String verdict;
+    private Verdict verdict;
     private int passedTestCases;
     private int totalTestCases;
     private long submissionTime;
@@ -17,7 +19,7 @@ public class Submission {
                       long playerId,
                       String language,
                       String code,
-                      String verdict,
+                      Verdict verdict,
                       int passedTestCases,
                       int totalTestCases,
                       long submissionTime
@@ -67,7 +69,7 @@ public class Submission {
         return totalTestCases;
     }
 
-    public String getVerdict() {
+    public Verdict getVerdict() {
         return verdict;
     }
 

@@ -1,5 +1,7 @@
 package com.dsaarena.model;
 
+import com.dsaarena.enums.Rank;
+
 public class User {
     private long id;
     private static long nextUserId = 100000;
@@ -8,7 +10,7 @@ public class User {
     private String password;
     private int coin;
     private int rating;
-    private String rank;
+    private Rank rank;
     public User(String username , String email , String password){
         this.id = nextUserId;
         nextUserId++;
@@ -17,7 +19,7 @@ public class User {
         this.password = password;
         this.coin = 2000;
         this.rating = 0;
-        this.rank = "Bronze";
+        this.rank = Rank.BRONZE;
     }
     public String getUsername(){
         return username;
@@ -34,7 +36,7 @@ public class User {
     public int getRating(){
         return rating;
     }
-    public String getRank(){
+    public Rank getRank(){
         return rank;
     }
     public void addCoins(int coinAdd){
@@ -79,22 +81,22 @@ public class User {
     }
     private void updateRank(){
         if(this.rating < 200){
-            this.rank = "Bronze";
+            this.rank = Rank.BRONZE;
         }
         else if(this.rating >= 200 && this.rating< 500){
-            this.rank = "Silver";
+            this.rank = Rank.SILVER;
         }
         else if(this.rating >= 500 && this.rating < 1000){
-            this.rank = "Gold";
+            this.rank = Rank.GOLD;
         }
         else if(this.rating >= 1000 &&  this.rating < 1800){
-            this.rank = "Platinum";
+            this.rank = Rank.PLATINUM;
         }
         else if(this.rating >= 1800 && this.rating < 2800){
-            this.rank = "Diamond";
+            this.rank = Rank.DIAMOND;
         }
         else {
-            this.rank = "Master";
+            this.rank = Rank.MASTER;
         }
     }
 }
