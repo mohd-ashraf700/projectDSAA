@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class submissionRepository {
+public class SubmissionRepository {
     private Map<Long , Submission> submissions;
     private Map<Long , List<Submission>> matchSubmissions;
 
-    public submissionRepository(){
+    public SubmissionRepository(){
         submissions = new HashMap<>();
         matchSubmissions = new HashMap<>();
     }
