@@ -6,6 +6,10 @@ import com.dsaarena.model.Submission;
 import com.dsaarena.repository.MatchRepository;
 import com.dsaarena.repository.SubmissionRepository;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.dsaarena.enums.MatchStatus.LIVE;
 
 public class SubmissionService {
@@ -35,6 +39,28 @@ public class SubmissionService {
         if(code == null || code.isBlank()){
             return null;
         }
+        long questionId = match.getQuestionId();
+        LocalDateTime submissionTime = LocalDateTime.now();
+        Submission submission = new Submission(matchId ,
+                                                questionId,
+                playerId,
+                language,
+                code,
+                verdict,
+                0, //baad m set kr dunga
+                0,//yh bhi
+                submissionTime);
+        submissionRepository.addSubmission(submission);
+        return submission;
+    }
+
+    //get match submission
+    public List<Submission> getMatchSubmissions(long matchId){
+        Match match = matchRepository.getMatchById(matchId);
+        if(match == null){
+            return new ArrayList<>();
+        }
+        return submissionRepository.getSubmissionsByMatchId(matchId);
     }
 
 }
