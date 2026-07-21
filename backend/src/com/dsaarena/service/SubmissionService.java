@@ -39,6 +39,9 @@ public class SubmissionService {
         if(code == null || code.isBlank()){
             return null;
         }
+        if(verdict != Verdict.ACCEPTED){
+                match.incrementWrongSubmissionCount(playerId);
+        }
         long questionId = match.getQuestionId();
         LocalDateTime submissionTime = LocalDateTime.now();
         Submission submission = new Submission(matchId ,
