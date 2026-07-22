@@ -7,25 +7,25 @@ public class Arena{
     private String arenaName;
     private Difficulty difficulty;
     private int entryFee;
-    private int rewardCoins;
     private int minRating;
     private int readingTime;
     private int codingTime;
     private int winRating;
     private int lossRating;
+    private int platformFee;
 
-    public Arena(int arenaId , String arenaName , Difficulty difficulty,int entryFee, int rewardCoins, int minRating, int readingTime, int codingTime , int winRating , int lossRating)
+    public Arena(int arenaId , String arenaName , Difficulty difficulty,int entryFee, int minRating, int readingTime, int codingTime , int winRating , int lossRating , int platformFee)
     {
         this.arenaId = arenaId;
         this.arenaName = arenaName;
         this.difficulty = difficulty;
         this.entryFee = entryFee;
-        this.rewardCoins = rewardCoins;
         this.minRating = minRating;
         this.readingTime = readingTime;
         this.codingTime = codingTime;
         this.winRating = winRating;
         this.lossRating = lossRating;
+        this.platformFee = platformFee;
     }
     public int getArenaId(){
         return arenaId;
@@ -38,9 +38,6 @@ public class Arena{
     }
     public int getEntryFee(){
         return entryFee;
-    }
-    public int getRewardCoins(){
-        return rewardCoins;
     }
 
     public int getMinRating() {
@@ -59,5 +56,9 @@ public class Arena{
 
     public int getLossRating() {
         return lossRating;
+    }
+
+    public int getPlatformFee(){
+        return platformFee;
     }
 }

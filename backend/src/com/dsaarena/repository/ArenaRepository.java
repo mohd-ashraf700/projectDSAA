@@ -20,72 +20,72 @@ public class ArenaRepository {
                 "Bronze Arena",
                 Difficulty.EASY,
                 200,
-                400,
                 0,
                 3,
                 10,
                 25,
-                5);
+                5,
+                0);
         arenas.put(101 , bronzeArena);
 
         Arena silverArena = new Arena(102,
                 "Silver Arena",
                 Difficulty.EASY_MEDIUM,
                 550,
-                1000,
                 200,
                 5,
                 15,
                 40,
-                10);
+                10,
+                            100);
         arenas.put(102 , silverArena);
 
         Arena goldArena = new Arena(103,
                 "Gold Arena",
                 Difficulty.MEDIUM,
                 1100,
-                2000,
                 500,
                 5,
                 18,
                 60,
-                15);
+                15,
+                            200);
         arenas.put(103 , goldArena);
 
         Arena platinumArena = new Arena(104,
                 "Platinum Arena",
                 Difficulty.MEDIUM_HARD,
                 2600,
-                5000,
                 1000,
                 5,
                 20,
                 90,
-                25);
+                25 ,
+                200);
         arenas.put(104 , platinumArena);
 
         Arena diamondArena = new Arena(105,
                 "Diamond Arena",
                 Difficulty.HARD,
                 11000,
-                20000,
                 1800,
                 10,
                 25,
                 130,
-                40);
+                40,
+                        2000);
         arenas.put(105 , diamondArena);
 
         Arena masterArena = new Arena(106,
                 "Master Arena",
                 Difficulty.ADVANCED,
                 26000,
-                50000,
                 2800,
                 10,
                 30,
                 180,
-                60);
+                60,
+                        2000);
         arenas.put(106 , masterArena);
     }
     public Arena getArenaById(int arenaId){
