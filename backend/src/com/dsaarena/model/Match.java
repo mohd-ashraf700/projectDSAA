@@ -67,4 +67,11 @@ public class Match{
             player2WrongSubmissions++;
         }
     }
+    public void completeMatch() {
+        this.matchStatus = MatchStatus.COMPLETED;
+    }
+
+    public void cancelMatch() {
+        this.matchStatus = MatchStatus.CANCELLED;
+    }
 }
