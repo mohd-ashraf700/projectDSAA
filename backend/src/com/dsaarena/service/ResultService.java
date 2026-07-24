@@ -57,6 +57,11 @@ public class ResultService {
 
         Submission player2Best = getBestSubmission(submissions , player2Id);
 
+        //handle condition of draw
+        if(player1Best == null && player2Best == null){
+            handleDraw(player1 , player2 , arena , match);
+            return;
+        }
     }
     //get best submission
     private Submission getBestSubmission(List<Submission> submissions,
@@ -76,4 +81,14 @@ public class ResultService {
         }
         return bestSubmission;
     }
+    // handle draw
+    void handleDraw(User player1 , User player2 , Arena arena , Match match){
+        int totalRefund = 2 * arena.getEntryFee() - arena.getPlatformFee();
+        int refundEachPlayer = totalRefund / 2;
+        player1.addCoins(refundEachPlayer);
+        player2.addCoins(refundEachPlayer);
+        match.completeMatch();
+    }
+
+
 }
