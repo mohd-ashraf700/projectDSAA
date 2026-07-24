@@ -62,6 +62,40 @@ public class ResultService {
             handleDraw(player1 , player2 , arena , match);
             return;
         }
+        //handle only one player submission case
+        if(player1Best == null){
+            handleWinner(player2 , player1 , arena , match);
+            return;
+        }
+        if(player2Best == null){
+            handleWinner(player1 , player2 , arena , match);
+            return;
+        }
+
+        // handle both player submitted code situation
+        if(player1Best.getVerdict() == Verdict.ACCEPTED &&
+            player2Best.getVerdict() == Verdict.ACCEPTED){
+            if(player1Best.getSubmissionTime()
+                    .isBefore(player2Best.getSubmissionTime())){
+                handleWinner(player1 , player2 , arena , match);
+            }
+            else if(player2Best.getSubmissionTime()
+                    .isBefore(player1Best.getSubmissionTime())){
+                handleWinner(player2 , player1 , arena , match);
+            }
+            else{
+                if(match.getPlayer1WrongSubmissions() > match.getPlayer2WrongSubmissions()){
+                    handleWinner( player2 , player1 , arena , match);
+                }
+                else if(match.getPlayer1WrongSubmissions() < match.getPlayer2WrongSubmissions()){
+                    handleWinner(player1 , player2 , arena , match);
+                }
+                else{
+                    handleDraw(player1 , player2 , arena , match);
+                }
+            }
+            return;
+        }
     }
     //get best submission
     private Submission getBestSubmission(List<Submission> submissions,
@@ -90,5 +124,31 @@ public class ResultService {
         match.completeMatch();
     }
 
+    //winner reward
+    private void addWinnerReward(User player , Arena arena){
+        int rewardCoins = (2 * arena.getEntryFee()) - arena.getPlatformFee();
+        player.addCoins(rewardCoins);
+    }
+    //increment of rating
+    private void increaseWinnerRating(User player , Arena arena){
+        int updatedRating = arena.getWinRating();
+        player.increaseRating(updatedRating);
+    }
+    //decrement of rating
+    private void decreaseLoserRating(User player , Arena arena){
+        int updatedRating = arena.getLossRating();
+        player.decreaseRating(updatedRating);
+    }
 
+    //Handle winner
+    private void handleWinner(User winner,
+                              User loser,
+                              Arena arena,
+                              Match match) {
+
+        addWinnerReward(winner, arena);
+        increaseWinnerRating(winner, arena);
+        decreaseLoserRating(loser, arena);
+        match.completeMatch();
+    }
 }
