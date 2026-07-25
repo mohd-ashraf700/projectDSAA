@@ -62,7 +62,8 @@ public class ResultService {
             handleDraw(player1 , player2 , arena , match);
             return;
         }
-        //handle only one player submission case
+
+        //handle only one player not submission case
         if(player1Best == null){
             handleWinner(player2 , player1 , arena , match);
             return;
@@ -74,7 +75,7 @@ public class ResultService {
 
         // handle both player submitted code situation
         if(player1Best.getVerdict() == Verdict.ACCEPTED &&
-            player2Best.getVerdict() == Verdict.ACCEPTED){
+                player2Best.getVerdict() == Verdict.ACCEPTED){
             if(player1Best.getSubmissionTime()
                     .isBefore(player2Best.getSubmissionTime())){
                 handleWinner(player1 , player2 , arena , match);
@@ -96,6 +97,44 @@ public class ResultService {
             }
             return;
         }
+
+        // only one player get accepted verdict
+        if (player1Best.getVerdict() == Verdict.ACCEPTED) {
+            handleWinner(player1, player2, arena, match);
+            return;
+        }
+
+        if (player2Best.getVerdict() == Verdict.ACCEPTED) {
+            handleWinner(player2, player1, arena, match);
+            return;
+        }
+
+        // handle both player submitted but notAccepted code situation
+        if(player1Best.getVerdict() != Verdict.ACCEPTED
+                && player2Best.getVerdict() != Verdict.ACCEPTED){
+            int player1Wrong = match.getPlayer1WrongSubmissions();
+            int player2Wrong = match.getPlayer2WrongSubmissions();
+            if(player1Wrong > player2Wrong){
+                handleWinner(player2 , player1 , arena , match);
+                return;
+            }
+            if(player1Wrong < player2Wrong){
+                handleWinner(player1 , player2 , arena , match);
+                return;
+            }
+            if(player1Best.getPassedTestCases() > player2Best.getPassedTestCases()){
+                handleWinner(player1 , player2 , arena , match);
+                return;
+            }
+            if(player1Best.getPassedTestCases() < player2Best.getPassedTestCases()){
+                handleWinner(player2 , player1 , arena , match);
+                return;
+            }
+
+            handleDraw(player1 , player2 , arena , match);
+            return;
+        }
+
     }
     //get best submission
     private Submission getBestSubmission(List<Submission> submissions,
@@ -116,7 +155,7 @@ public class ResultService {
         return bestSubmission;
     }
     // handle draw
-    void handleDraw(User player1 , User player2 , Arena arena , Match match){
+    private void handleDraw(User player1 , User player2 , Arena arena , Match match){
         int totalRefund = 2 * arena.getEntryFee() - arena.getPlatformFee();
         int refundEachPlayer = totalRefund / 2;
         player1.addCoins(refundEachPlayer);
