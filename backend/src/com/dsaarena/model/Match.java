@@ -2,6 +2,8 @@ package com.dsaarena.model;
 
 import com.dsaarena.enums.MatchStatus;
 
+import java.time.LocalDateTime;
+
 public class Match{
     private long matchId;
     private static long nextMatchId = 50000;
@@ -14,8 +16,8 @@ public class Match{
     private int player1RatingAtStart;
     private int player2RatingAtStart;
     private MatchStatus matchStatus;
-    private long startTime;
-    private long endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private int player1WrongSubmissions;
     private int player2WrongSubmissions;
 
@@ -30,8 +32,6 @@ public class Match{
         nextMatchId++;
         this.matchStatus = MatchStatus.Waiting;
         this.questionId = -1;
-        this.startTime = 0;
-        this.endTime = 0;
         this.winnerId = -1;
         this.player1WrongSubmissions = 0;
         this.player2WrongSubmissions = 0;
@@ -73,5 +73,21 @@ public class Match{
 
     public void cancelMatch() {
         this.matchStatus = MatchStatus.CANCELLED;
+    }
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+    public void setMatchStatus(MatchStatus matchStatus) {
+        this.matchStatus = matchStatus;
     }
 }
