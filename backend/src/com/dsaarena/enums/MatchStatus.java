@@ -1,7 +1,7 @@
 package com.dsaarena.enums;
 
 public enum MatchStatus {
-    Waiting ,
+    WAITING ,
     READING,
     LIVE ,
     COMPLETED,
