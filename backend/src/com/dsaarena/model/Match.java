@@ -30,7 +30,7 @@ public class Match{
         this.player2RatingAtStart = player2RatingAtStart;
         this.matchId = nextMatchId;
         nextMatchId++;
-        this.matchStatus = MatchStatus.Waiting;
+        this.matchStatus = MatchStatus.WAITING;
         this.questionId = -1;
         this.winnerId = -1;
         this.player1WrongSubmissions = 0;
@@ -47,6 +47,9 @@ public class Match{
     }
     public long getQuestionId(){
         return questionId;
+    }
+    public void setQuestionId(long questionId) {
+        this.questionId = questionId;
     }
     public int getArenaId(){
         return arenaId;
@@ -90,4 +93,5 @@ public class Match{
     public void setMatchStatus(MatchStatus matchStatus) {
         this.matchStatus = matchStatus;
     }
+
 }
