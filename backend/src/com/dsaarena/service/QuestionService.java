@@ -9,7 +9,6 @@ import com.dsaarena.repository.QuestionRepository;
 
 import java.util.List;
 import java.util.Random;
-
 public class QuestionService {
     private final ArenaRepository arenaRepository;
     private final QuestionRepository questionRepository;
