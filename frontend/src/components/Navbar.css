@@ -1,0 +1,45 @@
+.arena-navbar {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color:#8d8e92 ;
+    color: #ccc;
+}
+
+.links-section {
+    display: flex;
+    gap: 30px;
+}
+.links-section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.input-button-section{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo{
+    width: 170px;
+    height: auto;
+}
+
+.input-button-section input{
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+.input-button-section button{
+    border-radius: 5px;
+    padding: 8px 12px;
+    border: 1px none;
+    color: white;
+    background-color: rgb(39, 109, 239);
+}

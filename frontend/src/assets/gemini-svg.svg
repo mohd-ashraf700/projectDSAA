@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <!-- Icon Group -->
+  <g transform="translate(10, 10)">
+    <!-- Hexagon Arena / Shield Outer Boundary -->
+    <path d="M 50 5 L 90 25 L 90 75 L 50 95 L 10 75 L 10 25 Z" stroke="#0B132B" stroke-width="4" fill="none" stroke-linejoin="round"/>
+    
+    <!-- Left Code Bracket (Cyan) -->
+    <polyline points="38,35 22,50 38,65" stroke="#00E5FF" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Right Code Bracket (Electric Blue) -->
+    <polyline points="62,35 78,50 62,65" stroke="#2962FF" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Central Node / Stylized Sword Hilt -->
+    <line x1="50" y1="20" x2="50" y2="80" stroke="#0B132B" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="50" cy="50" r="6" fill="#2962FF"/>
+  </g>
+
+  <!-- Typography Group -->
+  <!-- "DSA" - Heavy, tight letter spacing for impact -->
+  <text x="125" y="65" font-family="system-ui, -apple-system, 'Inter', 'Montserrat', sans-serif" font-weight="900" font-size="54" fill="#0B132B" letter-spacing="-1.5">DSA</text>
+  
+  <!-- "ARENA" - Wide tracking for a modern, premium base -->
+  <text x="128" y="95" font-family="system-ui, -apple-system, 'Inter', 'Montserrat', sans-serif" font-weight="700" font-size="20" fill="#2962FF" letter-spacing="9.5">ARENA</text>
+</svg>
