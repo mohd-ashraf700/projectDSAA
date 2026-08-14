@@ -1,0 +1,59 @@
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 40px;
+}
+
+.feature-card{
+    border: 1px solid #ddd;
+    border-radius: 12px;
+     padding: 25px 30px;
+    box-sizing: border-box;
+    background-color: rgb(236, 236, 236);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+     display: flex;
+    flex-direction: column;
+}
+
+.feature-card h2{
+    font-size: 35px;
+    margin: 0 0 30px 0;
+}
+
+.feature-card p{
+    font-size: 18px;
+    margin: 0 0 25px 0;
+    line-height: 1.4;
+}
+
+.feature-card button{
+    margin-top: auto;
+    align-self: flex-start;
+    width: 220px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(39, 109, 239);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+.feature-explore:hover {
+    background-color: rgb(25, 90, 210);
+    box-shadow: 0 0 0 1px rgb(28, 28, 206);
+}
+
+
+.features-heading h1 {
+    margin-left: 45px;
+    margin-top:30px;
+}
+
+.features-line p{
+    margin: 0 45px;
+    margin-top:30px;
+    line-height: 1.4;
+    font-size: 20px;
+}
