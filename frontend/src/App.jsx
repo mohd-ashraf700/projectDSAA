@@ -1,10 +1,10 @@
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 function App(){
   return (
     <div>
       <Navbar></Navbar>
-      <h1>DSA Arena</h1>
-      <p>Welcome to DSA Arena</p>
+      <Hero></Hero>
     </div>
   );
 }

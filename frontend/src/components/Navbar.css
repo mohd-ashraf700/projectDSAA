@@ -7,7 +7,7 @@
     gap: 20px;
     padding: 12px 30px;
     font-size: 18px;
-    background-color:#8d8e92 ;
+    background-color:#090909 ;
     color: #ccc;
 }
 
@@ -26,8 +26,8 @@
 }
 
 .links-section a:hover{
-    color: rgb(235, 224, 196);
-    box-shadow: 0 0 5px rgba(40, 39, 39, 0.611);
+    color: rgb(39, 109, 239);
+    box-shadow: 0 0 5px rgba(101, 153, 255, 0.611);
 }
 
 .input-button-section{
@@ -35,8 +35,8 @@
     align-items: center;
     gap: 20px;
 }
-.logo{
-    width: 170px;
+.logo-section img{
+    width: 130px;
     height: auto;
 }
 
@@ -47,7 +47,7 @@
     border: 1px solid #ccc;
 }
 .input-button-section input:focus {
-    outline: 2px solid #666668;
+    outline: 2px solid rgb(39, 109, 239);
 }
 
 .input-button-section button{
@@ -61,11 +61,11 @@
 }
 
 .login:hover{
-    box-shadow: 0 0 5px rgba(40, 39, 39, 0.611);
+    box-shadow: 0 0 5px  rgb(249, 249, 249);
 }
 
 .register:hover{
-    box-shadow: 0 0 5px rgba(40, 39, 39, 0.611);
+    box-shadow: 0 0 5px  rgba(249, 249, 249);
     background-color: #737477;
 }
 

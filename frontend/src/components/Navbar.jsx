@@ -1,4 +1,4 @@
-import logo from "../assets/gemini-svg.svg";
+import logo from "../assets/dsaArenaLogo.png";
 import "./Navbar.css";
 
 function Navbar() {
