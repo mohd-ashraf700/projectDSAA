@@ -7,7 +7,7 @@ function Navbar() {
 
       <div className="arena-navbar">
         <div className="logo-section">
-            <img className="logo" src={logo} alt="dsaArena" />
+            <a href="#"><img className="logo" src={logo} alt="dsaArena" /></a>
         </div>
         <div className="links-section">
             <a href="#">Home</a>
@@ -17,8 +17,8 @@ function Navbar() {
         </div>
         <div className="input-button-section">
             <input type="text" placeholder="Search" />
-            <button>Login</button>
-            <button>Register</button>
+            <button className="login">Login</button>
+            <button className="register">Register</button>
         </div>
       </div>
     </nav>
