@@ -1,0 +1,64 @@
+.arena-details-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+.arena-details{
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px 30px;
+    background-color:rgb(236, 236, 236); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.arena-details h3{
+    font-size: 30px;
+    padding: 0;
+}
+
+.arena-details ul{
+    list-style: none;
+    padding: 0;
+}
+
+.arena-details li{
+    margin-bottom:15px;
+}
+
+.arena-details h5 {
+    display: inline;
+    font-size: 16px;
+}
+
+.enter-arena{
+    margin-top: auto;
+    align-self: flex-start;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    padding: 8px 12px;
+    background-color: rgb(39, 109, 239);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.enter-arena:hover {
+    background-color: rgb(25, 90, 210);
+    box-shadow: 0 0 0 1px rgb(28, 28, 206);
+}
+
+.explore-arenas-heading h1 {
+    margin-left: 35px;
+    margin-top: 80px;
+}
+
+.exlore-arenas-line1 p{
+    margin: 0 35px;
+    margin-top:30px;
+    line-height: 1.4;
+    font-size: 20px;
+}
