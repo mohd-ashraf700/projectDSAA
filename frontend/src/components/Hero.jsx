@@ -2,6 +2,9 @@ import heroImg from "../assets/hero-section-image.png";
 import FeatureCard from "./FeatureCard";
 import "./FeatureCard.css";
 import "./Hero.css";
+import ArenaCard from "./ArenaCard";
+import "./ArenaCard.css";
+
 function Hero(){
     return(
         <>
@@ -53,6 +56,71 @@ function Hero(){
 
             <FeatureCard title="Coins & Rewards"
                 description="Earn coins by winning battles, complete challenges, and unlock rewarding opportunities as you progress through competitive DSA arenas." ></FeatureCard>
+        </section>
+
+        <div className="explore-arenas-heading"><h1>Explore Arenas</h1></div>
+        <div className="exlore-arenas-line1"><p>Explore different arenas designed for various skill levels, compete against real players, solve challenging DSA problems, earn rewards, and climb the competitive rankings.</p></div>
+
+        <section className="arena-details-grid">
+            <ArenaCard
+                arenaName="Bronze Arena"
+                difficulty="EASY"
+                entryFee={200}
+                minRating={0}
+                readingTime={3}
+                codingTime={10}
+                winRating={25}
+            />
+
+            <ArenaCard
+                arenaName="Silver Arena"
+                difficulty="EASY-MEDIUM"
+                entryFee={550}
+                minRating={200}
+                readingTime={5}
+                codingTime={15}
+                winRating={40}
+            />
+
+            <ArenaCard
+                arenaName="Gold Arena"
+                difficulty="MEDIUM"
+                entryFee={1100}
+                minRating={500}
+                readingTime={5}
+                codingTime={18}
+                winRating={60}
+            />
+
+            <ArenaCard
+                arenaName="Platinum Arena"
+                difficulty="EDIUM-HARD"
+                entryFee={2600}
+                minRating={1000}
+                readingTime={5}
+                codingTime={20}
+                winRating={90}
+            />
+
+            <ArenaCard
+                arenaName="Diamond Arena"
+                difficulty="HARD"
+                entryFee={11000}
+                minRating={1800}
+                readingTime={10}
+                codingTime={25}
+                winRating={130}
+            />
+
+            <ArenaCard
+                arenaName="Master Arena"
+                difficulty="ADVANCED"
+                entryFee={26000}
+                minRating={2800}
+                readingTime={10}
+                codingTime={30}
+                winRating={180}
+            />
         </section>
         
         </>
