@@ -4,6 +4,8 @@ import "./FeatureCard.css";
 import "./Hero.css";
 import ArenaCard from "./ArenaCard";
 import "./ArenaCard.css";
+import HowToPlay from "./HowToPlay";
+import "./HowToPlay.css";
 
 function Hero(){
     return(
@@ -23,7 +25,7 @@ function Hero(){
 
             <div className="hero-buttons">
                 <button className="hero-enter-arena">Enter Arena</button>
-                <button className="hero-explore-arena">Explore Arena</button>
+                <button className="hero-explore-arena">Explore Arenas</button>
             </div>
             </div>
 
@@ -94,7 +96,7 @@ function Hero(){
 
             <ArenaCard
                 arenaName="Platinum Arena"
-                difficulty="EDIUM-HARD"
+                difficulty="MEDIUM-HARD"
                 entryFee={2600}
                 minRating={1000}
                 readingTime={5}
@@ -123,6 +125,25 @@ function Hero(){
             />
         </section>
         
+        <div className="how-to-play-heading">
+            <h1>How To Play</h1>
+        </div>
+        <section className="how-to-play-grid">
+
+            <HowToPlay step={1}
+                heading="Choose Arena" 
+                description="Choose an arena that matches your skill level and rating, then pay the required entry fee to join the competition." />
+
+            <HowToPlay step={2}
+                heading="Battle & Solve" 
+                description="Get matched with a suitable opponent, receive a DSA problem, and solve it within the given time limit while competing head-to-head." />
+
+            <HowToPlay step={3}
+                heading="Win & Climb"
+                description="Win the match, earn rating and rewards, improve your rank, and progress through higher arenas as you become a stronger DSA competitor."
+            />
+
+        </section>
         </>
     )
 }
