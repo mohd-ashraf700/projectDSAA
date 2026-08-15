@@ -1,13 +1,15 @@
 import heroImg from "../assets/hero-section-image.png";
 import FeatureCard from "./FeatureCard";
 import "./FeatureCard.css";
-import "./Hero.css";
+import "./Home.css";
 import ArenaCard from "./ArenaCard";
 import "./ArenaCard.css";
 import HowToPlay from "./HowToPlay";
 import "./HowToPlay.css";
+import Footer from "./Footer";
+import "./Footer.css";
 
-function Hero(){
+function Home(){
     return(
         <>
         <section className="hero">
@@ -144,8 +146,22 @@ function Hero(){
             />
 
         </section>
+
+        <section className="ready-to-compete">
+            <div className="ready">
+                <h1>Ready to Compete?</h1>
+            <p>Put your DSA skills to the test.
+                Challenge opponents. Climb the ranks.</p>
+
+            <button>Enter Arena</button>
+            </div>
+        </section>
+
+        <section className="footer">
+            <Footer></Footer>
+        </section>
         </>
     )
 }
 
-export default Hero;
+export default Home;

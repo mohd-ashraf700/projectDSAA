@@ -1,5 +1,6 @@
 import logo from "../assets/dsaArenaLogo.png";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,10 +8,10 @@ function Navbar() {
 
       <div className="arena-navbar">
         <div className="logo-section">
-            <a href="#"><img className="logo" src={logo} alt="dsaArena" /></a>
+           <Link to="/"><img className="logo" src={logo} alt="dsaArena" /></Link>
         </div>
         <div className="links-section">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
             <a href="#">Arenas</a>
             <a href="#">Details</a>
             <a href="#">Contact</a>

@@ -34,6 +34,8 @@
     padding: 10px 25px;
     margin: 20px 10px;
     cursor: pointer;
+     box-shadow: 0 4px 14px rgba(41, 98, 255, 0.3); 
+    transition: all 0.3s ease;
 }
 
 .hero-enter-arena{
@@ -49,9 +51,47 @@
 .hero-enter-arena:hover{
     box-shadow: 0 0 0 1px rgb(1, 174, 21);
     color: #e6e6e8;
+    transform: translateY(-3px);
 }
 
 .hero-explore-arena:hover{
     box-shadow: 0 0 0 1px rgb(77, 111, 213);
     color: #e6e6e8;
+    transform: translateY(-3px);
+}
+
+.ready-to-compete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.ready h1 {
+    margin-top: 50px;
+}
+
+.ready p{
+    margin-top:30px;
+    line-height: 1.4;
+    font-size: 18px;
+}
+
+.ready button{
+    background-color: rgb(39, 109, 239);
+    color: white;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin: 20px 0;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(41, 98, 255, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.ready button:hover{
+    box-shadow: 0 0 0 1px rgb(77, 111, 213);
+    color: #e6e6e8;
+    transform: translateY(-3px);
 }

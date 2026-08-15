@@ -44,11 +44,14 @@
     color: white;
     cursor: pointer;
     font-size: 16px;
+    box-shadow: 0 4px 14px rgba(41, 98, 255, 0.3); 
+    transition: all 0.3s ease;
 }
 
 .enter-arena:hover {
     background-color: rgb(25, 90, 210);
     box-shadow: 0 0 0 1px rgb(28, 28, 206);
+    transform: translateY(-3px);
 }
 
 .explore-arenas-heading h1 {
