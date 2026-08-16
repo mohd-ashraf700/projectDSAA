@@ -1,0 +1,46 @@
+.details-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #6c95de, #e8f0ff);
+    width: 100%;
+    min-height: 600px;
+    padding: 50px 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.details-hero-content {
+    width: 45%;
+    min-width: 0;
+}
+
+.details-hero-content h1 {
+    font-size: 55px;
+    margin: 0 0 25px;
+}
+
+.details-hero-content p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.details-hero-content h4 {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.details-hero-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-hero-image img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+}

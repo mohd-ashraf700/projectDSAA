@@ -13,7 +13,7 @@ function Navbar() {
         <div className="links-section">
             <Link to="/">Home</Link>
             <a href="#">Arenas</a>
-            <a href="#">Details</a>
+            <Link to="/details">Details</Link>
             <a href="#">Contact</a>
         </div>
         <div className="input-button-section">
