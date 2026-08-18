@@ -88,4 +88,42 @@ export const howItWorks = [
         heading : 'Update Rank and Progress' ,
         description :"The player's updated rating determines their competitive rank and eligibility for higher-level arenas. As players consistently win matches and improve their ratings, they can progress from lower-level arenas toward more challenging competitions, giving them a clear long-term progression path within DSA Arena."
     }  
+];
+
+export const resultEvaluationCondition = [
+    {
+        Condition : "Condition 01" ,
+        heading : "Best Submission" ,
+        description : "For each player, the system retrieves the best submission made during the match and uses it as the primary submission for result evaluation. The selected submission contains important information such as its verdict, submission time, and passed test cases, which are later compared with the opponent's best submission."
+    } ,
+    {
+        Condition : "Condition 02" ,
+        heading : "Both Players Accepted" ,
+        description : "When both players successfully receive an ACCEPTED verdict, the system first compares the submission times of their accepted solutions. The player who submitted the accepted solution earlier is declared the winner. This makes solving the problem correctly and submitting it as quickly as possible important during the coding phase."
+    } ,
+    {
+        Condition : "Condition 03" ,
+        heading : "Same Submission Time" ,
+        description : "If both players have accepted solutions submitted at the same time, submission time alone cannot determine the winner. In this situation, the system compares the number of wrong submissions made by both players. The player with fewer wrong submissions is declared the winner because they reached the accepted solution with fewer unsuccessful attempts."
+    } ,
+    {
+        Condition : "Condition 04" ,
+        heading : "Only One Accepted" ,
+        description : "If only one player receives an ACCEPTED verdict while the other player does not, the player with the accepted solution is immediately declared the winner. In this situation, the system does not need to compare submission times, wrong submissions, or passed test cases because only one player successfully solved the problem."
+    } ,
+    {
+        Condition : "Condition 05" ,
+        heading : "Neither Player Accepted" ,
+        description : "If neither player manages to receive an accepted verdict, the system still evaluates their performance instead of automatically declaring a draw. It first compares the number of wrong submissions made by both players. The player with fewer wrong submissions is considered to have performed better and is declared the winner."
+    } ,
+    {
+        Condition : "Condition 06" ,
+        heading : "Passed Test Cases" ,
+        description : "If neither player receives an accepted verdict and both have the same number of wrong submissions, the system uses passed test cases as the next evaluation criterion. The player whose best submission passes more test cases is declared the winner, indicating that their solution progressed further toward a correct solution."
+    } ,
+    {
+        Condition : "Condition 07" ,
+        heading : "Draw" ,
+        description : "If the players remain completely equal after applying all applicable evaluation conditions, neither player can be given an advantage based on the available match data. In this situation, the system declares the match a draw. This ensures that a winner is not selected arbitrarily when both players have performed equally."
+    } 
 ]
