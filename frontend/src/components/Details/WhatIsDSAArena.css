@@ -1,0 +1,23 @@
+.purpose{
+    margin: 50px;
+}
+
+.purpose h1{
+    margin-top: 80px;
+}
+.purpose h3{
+    margin-top:30px;
+    font-size: 24px;
+}
+.purpose h4{
+    margin-top:30px;
+    font-size: 22px;
+}
+.purpose p{
+    line-height: 1.4;
+    font-size: 18px;
+}
+
+.purpose ol{
+    list-style: none;
+}

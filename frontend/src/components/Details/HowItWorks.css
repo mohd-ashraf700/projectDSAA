@@ -1,0 +1,20 @@
+.working{
+    margin: 50px;
+}
+
+.working h1{
+    margin-top: 80px;
+}
+.working h4{
+    margin-top:30px;
+    font-size: 22px;
+}
+.working p{
+    line-height: 1.4;
+    font-size: 18px;
+    margin-right: 40px;
+}
+
+.working ol li::marker {
+    font-weight: 700;
+}
