@@ -15,6 +15,12 @@
     margin-right: 40px;
 }
 
-.working ol li::marker {
-    font-weight: 700;
+
+.grid{
+    background: linear-gradient(to right, rgb(240, 233, 162), rgb(154, 235, 250));
+    padding: 10px 20px;
+    margin: 30px 5px;
+    border: none;
+    box-shadow: 3px 1px 5px gray;
+    border-radius: 15px;
 }

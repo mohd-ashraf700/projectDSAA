@@ -6,14 +6,13 @@ export function HowItWorks(){
             <div className="working">
                 <h1>How Does DSA Arena Work?</h1>
 
-                <ol>
                     {howItWorks.map((item , index) =>
-                    <li key={index}>
-                        <h4>{item.heading}</h4>
+                    <div className="grid" key={index}>
+                        <h4>{item.step} : {item.heading}</h4>
                         <p>{item.description}</p>
-                    </li>
-                    )}
-                </ol>
+                    </div>
+                    )};
+
             </div>
         </>
     );
