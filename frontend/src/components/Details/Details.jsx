@@ -2,6 +2,7 @@ import DetailsHero from "./DetailsHero";
 import WhatIsDSAArena from "./WhatIsDSAArena";
 import { HowItWorks } from "./HowItWorks";
 import { ResultEvaluation } from "./ResultEvaluation";
+import RatingSystem  from "./RatingSystem";
 
 function Details(){
     return(
@@ -13,6 +14,8 @@ function Details(){
         <HowItWorks></HowItWorks>
 
         <ResultEvaluation></ResultEvaluation>
+
+        <RatingSystem></RatingSystem>
         </>
     );
 }

@@ -1,22 +1,22 @@
-.working{
+.rating{
     margin: 50px;
 }
 
-.working h1{
+.rating h1{
     margin-top: 80px;
 }
-.working h4{
+.rating h3{
     margin-top:30px;
     font-size: 22px;
 }
-.working p{
+.rating p{
     line-height: 1.4;
     font-size: 18px;
     margin-right: 40px;
 }
 
 
-.grid{
+.rating-subheadings{
     background-color:rgb(236, 236, 236); 
     padding: 10px 20px;
     margin: 30px 5px;

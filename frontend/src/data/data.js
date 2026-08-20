@@ -127,3 +127,31 @@ export const resultEvaluationCondition = [
         description : "If the players remain completely equal after applying all applicable evaluation conditions, neither player can be given an advantage based on the available match data. In this situation, the system declares the match a draw. This ensures that a winner is not selected arbitrarily when both players have performed equally."
     } 
 ]
+
+export const RatingSystemData = [
+    {
+        number : '01' ,
+        heading : "What is Rating?" ,
+        description : "Rating represents a player's competitive skill level in DSA Arena. It changes after every completed match based on the final result. A higher rating allows players to enter more challenging arenas and compete against stronger opponents."
+    } ,
+    {
+        number : '02' ,
+        heading : "Winner Rating" ,
+        description : "When a player wins a match, their rating increases according to the winRating defined for the selected arena. Higher-level arenas provide greater rating gains, rewarding players for competing successfully at more difficult levels. The updated rating improves the player's competitive standing and can also unlock access to higher-rated arenas."
+    },
+    {
+        number : '03' ,
+        heading : "Loser Rating" ,
+        description : "When a player loses a match, their rating is decreased by a fixed amount according to the platform's rating rules. Unlike the winner's rating gain, which depends on the selected arena, the loser receives a defined rating penalty for the loss. This encourages consistent performance and makes every competitive match meaningful."
+    },
+    {
+        number : '04' ,
+        heading : "Draw" ,
+        description : "If both players perform equally according to all applicable result evaluation conditions, the match is declared a draw. Since neither player is considered the winner or loser, both players receive no rating increase or decrease. The match is completed without awarding a win or applying a loss penalty." 
+    },
+    {
+        number : '05' ,
+        heading : "Rating & Arena Eligibility" ,
+        description : "A player's rating determines which arenas they are eligible to enter. Each arena has a predefined minimum rating requirement, so players must reach the required rating before accessing higher-level competitions. As players win matches and improve their rating, they gradually become eligible for more challenging arenas with stronger competition and greater rewards."
+    }
+]
